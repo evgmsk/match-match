@@ -1,0 +1,66 @@
+@import "../common/variables";
+
+.invitation {
+  position: relative;
+  background: darken($bg-color-main, 5%);
+  width: 80%;
+  height: 80%;
+  padding: 2rem 1.5rem;
+  color: $text-color-main;
+  text-align: center;
+  font: $font-main;
+  border: solid .1rem darken($border-main, 5%);
+  border-radius: 18px;
+  @media (min-width: 768px) {
+    max-width: 75%;
+    padding: 2.5rem 5rem;
+  }
+  @media (min-width: 900px) {
+    max-width: 70%;
+    padding: 3rem 6rem;
+  }
+  @media (min-width: 1200px) {
+    max-width: 80rem;
+    padding: 3.5rem 7rem;
+  }
+  h1{
+    font: 3.5rem/1 'Helvetica', 'sans-serif';
+    color: $text-color-main;
+    margin-bottom: 3rem;
+  }
+  button {
+    height: 6rem;
+    width: 24rem;
+    background-color: $bg-inv-button;
+    border: none;
+    border-radius: 9px;
+    font-size: 2rem;
+    color: $text-color-main;
+    font-weight: 700;
+    margin: 1rem auto;
+    transition: color .5s;
+    &:hover{
+      background-color: $text-color-main;
+      color: $bg-invite;
+      cursor: pointer;
+      transition: color .5s;
+    }
+    @media (min-width: 768px) {
+      margin: 1.5rem auto;
+    }
+    @media (min-width: 900px) {
+      margin: 2rem auto;
+    }
+  }
+  p {
+    font: 1.8rem/2 'Helvetica', 'sans-serif';
+    margin: 1rem auto;
+  }
+  .game-description {
+    width: 100%;
+    margin: 0 auto;
+  }
+  &.hide-invitation {
+    display: none;
+  }
+}

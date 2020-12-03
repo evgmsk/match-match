@@ -1,0 +1,65 @@
+@import "variables", "../mixin/_mixins", "../mixin/_placeholders";
+
+html {
+  font-size: 10px;
+  @media (max-width: 1200px) {
+    font-size: 9px;
+    line-height: 2;
+  }
+  @media (max-width: 600px) {
+    font-size: 8px;
+    line-height: 2;
+  }
+}
+
+body {
+  background:  radial-gradient($bg-body, lighten($bg-body, 20%));
+  min-width: 350px;
+}
+
+.main {
+  position: relative;
+  background: radial-gradient(ellipse farthest-side, #ffffff, $border-main);
+  max-width: 98%;
+  min-width: 40rem;
+  margin: 0 auto;
+  min-height: calc(100vh - 15rem);
+  box-sizing: border-box;
+  border-radius: 27px;
+  padding: 2rem;
+  @extend %inset-shadow;
+  @media (min-width: 1200px) {
+
+  }
+}
+.desk-background{
+  position: relative;
+  border-radius: 2rem;
+  box-sizing: border-box;
+  background: radial-gradient(farthest-side, $bg-color-main, darken($bg-color-main, 5%));
+  min-height: calc(100vh - 19rem);
+  .main-container {
+    min-height: calc(100vh - 19rem);
+    background: url('#{$imgPath}/publicdomainq-panda.svg') no-repeat;
+    background-size: 25rem;
+    position: relative;
+    @include flex(center, center);
+    border-radius: 18px;
+    @extend %inset-shadow;
+    transition: background-size .5s;
+  }
+  .main-container.big-panda {
+    background-size: 55%;
+    transition: background-size .5s;
+  }
+}
+
+.header {
+  @include flex(center);
+  height: 10rem;
+}
+
+.footer {
+  min-height: 5rem;
+}
+
