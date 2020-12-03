@@ -134,8 +134,7 @@ export class Game extends Deck {
         if (this.eventQueue.length)
             return;
         e.preventDefault();
-        e.stopPropagation();
-        console.log(e.target, e.target.parentElement )
+        e.stopPropagation()
         const targetCard = e.target;
         if (targetCard.classList.contains('card-container'))
             this.resolvePickedCard(targetCard);

@@ -20,17 +20,22 @@ export default class Deck {
     }
 
     shuffleCards(array) {
-        const arr = [...array];
-        let length = array.length;
-        for (;length--;) {
-            const ind = Math.floor(Math.random() * (length + 1));
-            [arr[ind], arr[length]] = [arr[length], arr[ind]];
+        if (array.length < this.level) {
+            throw(new Error('Not enough cards'));
         }
-        if (array.length === this.level * 2) {
-            this.deckCards = arr;
-            return;
+        const result = [...array.slice(0, this.level), ...array.slice(0, this.level)];
+        let i = result.length - 1;
+        while (i) {
+            const ind = Math.floor(Math.random() * (i + 1));
+            if (ind !== i - this.level ) {
+                [result[ind], result[i]] = [result[i], result[ind]];
+            } else if (i > 0) {
+                [result[ind], result[i - 1]] = [result[i - 1], result[ind]];
+            }
+            i -= 1;
         }
-        this.shuffleCards([...arr.slice(0, this.level), ...arr.slice(0, this.level)]);
+        this.deckCards = [...result];
+        console.log(result, array);
     }
 
     newDeck() {

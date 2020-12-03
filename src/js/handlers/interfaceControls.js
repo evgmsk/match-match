@@ -1,7 +1,7 @@
 /**
  * project match-match.
  */
-import { game } from '../game/gameClass';
+
 import { EventNodes } from '../common/eventNodes';
 // drop menu onFocus handlers
 
