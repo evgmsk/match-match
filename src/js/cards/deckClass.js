@@ -1,6 +1,4 @@
-/**
- * project match-match.
- */
+
 import Card from './cardClass';
 import { DefaultLevel, DefaultSkirt } from '../common/constants';
 import { CardsImages, CardsSkirts } from './cardsUrls';
@@ -21,13 +19,13 @@ export default class Deck {
 
     shuffleCards(array) {
         if (array.length < this.level) {
-            throw(new Error('Not enough cards'));
+            throw (new Error('Not enough cards'));
         }
         const result = [...array.slice(0, this.level), ...array.slice(0, this.level)];
         let i = result.length - 1;
         while (i) {
             const ind = Math.floor(Math.random() * (i + 1));
-            if (ind !== i - this.level ) {
+            if (ind !== i - this.level) {
                 [result[ind], result[i]] = [result[i], result[ind]];
             } else if (i > 0) {
                 [result[ind], result[i - 1]] = [result[i - 1], result[ind]];
@@ -35,7 +33,6 @@ export default class Deck {
             i -= 1;
         }
         this.deckCards = [...result];
-        console.log(result, array);
     }
 
     newDeck() {
@@ -64,8 +61,7 @@ export default class Deck {
 
     drawDeck(deskNode, ind = 0) {
         this.deck[ind].drawCard(deskNode);
-        ind += 1;
-        if (ind < this.deck.length)
-            setTimeout(() => this.drawDeck(deskNode, ind), 100);
+        if (ind < this.deck.length - 1)
+            setTimeout(() => this.drawDeck(deskNode, ind + 1), 100);
     }
 }

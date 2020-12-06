@@ -1,8 +1,8 @@
 /**
  * project match-match.
  */
-import { Invite } from '../common/eventNodes';
-import RegistrationForm from './formControls';
+import { Invite } from '../common/event-dom-nodes';
+import RegistrationForm from './form-controls';
 
 export default class RulesControls {
     static rulesClose(e) {

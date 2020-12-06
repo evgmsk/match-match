@@ -4,8 +4,8 @@
 
 import Deck from '../cards/deckClass';
 import { Storage, CurrentPlayer } from '../common/constants';
-import { EventNodes } from '../common/eventNodes';
-import RegistrationForm from '../handlers/formControls';
+import { TimerNode, GameDesk, GameSection, MenuLevel, MenuSkirts } from '../common/event-dom-nodes';
+import RegistrationForm from '../handlers/form-controls';
 
 export class Game extends Deck {
     constructor(deck) {
@@ -21,8 +21,8 @@ export class Game extends Deck {
         this.openedCards = [];
         this.cardsOut = 0;
         this.deskClasses = '';
-        this.deskNode = EventNodes.GameDesk;
-        this.timerNode = EventNodes.Timer.querySelector('span');
+        this.deskNode = GameDesk;
+        this.timerNode = TimerNode.querySelector('span');
         this.eventQueue = false;
         this.timer = this.timer.bind(this);
         this.newPlayer = this.newPlayer.bind(this);
@@ -66,10 +66,9 @@ export class Game extends Deck {
         return this.time.reduce((acc, x, i) => {
             const val = String(x);
             if (!i) {
-                acc = val.length > 1 ? `${val}` : `0${val}`;
-            } else
-                acc = val.length > 1 ? `${val}:${acc}` : `0${val}:${acc}`;
-            return acc;
+                return acc + val.length > 1 ? `${val}` : `0${val}`;
+            }
+            return acc + val.length > 1 ? `${val}:${acc}` : `0${val}:${acc}`;
         }, '');
     }
 
@@ -89,7 +88,7 @@ export class Game extends Deck {
         e.stopPropagation();
         clearInterval(this.timerInterval);
         this.clearDesk();
-        EventNodes.GameSection.style.display = 'none';
+        GameSection.style.display = 'none';
         RegistrationForm.showRegForm();
     }
 
@@ -101,7 +100,7 @@ export class Game extends Deck {
         const level = parseInt(e.target.value, 10);
         if (level === this.level)
             return;
-        EventNodes.MenuLevel.querySelector('.active-menu-item').classList.toggle('active-menu-item');
+        MenuLevel.querySelector('.active-menu-item').classList.toggle('active-menu-item');
         e.target.classList.toggle('active-menu-item');
         super.setLevel(level);
         this.startGame();
@@ -114,7 +113,7 @@ export class Game extends Deck {
         e.stopPropagation();
         if (e.target.classList.contains('active-menu-item'))
             return;
-        EventNodes.MenuSkirts.querySelector('.active-menu-item').classList.toggle('active-menu-item');
+        MenuSkirts.querySelector('.active-menu-item').classList.toggle('active-menu-item');
         e.target.classList.toggle('active-menu-item');
         super.setSkirts(e.target.name);
     }
@@ -134,7 +133,7 @@ export class Game extends Deck {
         if (this.eventQueue.length)
             return;
         e.preventDefault();
-        e.stopPropagation()
+        e.stopPropagation();
         const targetCard = e.target;
         if (targetCard.classList.contains('card-container'))
             this.resolvePickedCard(targetCard);

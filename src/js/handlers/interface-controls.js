@@ -2,23 +2,35 @@
  * project match-match.
  */
 
-import { EventNodes } from '../common/eventNodes';
+import { EventNodes } from '../common/event-dom-nodes';
+// import MenuFocus from './menu-focus-handler';
 // drop menu onFocus handlers
 
+export default class MenuFocus {
+    static focusDropMenu(e) {
+        e.stopPropagation();
+        e.target.parentElement.classList.add('dropped');
+    }
 
-[EventNodes.ButtonLevel, EventNodes.ButtonSkirt]
+    static blurDropMenu(e) {
+        e.stopPropagation();
+        // e.target.parentElement.parentElement.classList.remove('dropped');
+    }
+}
 
-EventNodes.HeadMenu.querySelectorAll('.drop-item:last-of-type')
-    .forEach(x => {
-        x.addEventListener('blur', menuHandlers.blurDropMenu);
-    });
+// [EventNodes.ButtonLevel, EventNodes.ButtonSkirt]
 
-EventNodes.HeadMenu.querySelectorAll('.drop-item:nth-of-type(2)')
-    .forEach(x => {
-        x.classList.toggle('active-menu-item');
-    });
+// EventNodes.HeadMenu.querySelectorAll('.drop-item:last-of-type')
+//     .forEach(x => {
+//         x.addEventListener('blur', MenuFocus.blurDropMenu);
+//     });
 
-export default menuHandlers;
+// EventNodes.HeadMenu.querySelectorAll('.drop-item:nth-of-type(2)')
+//     .forEach(x => {
+//         x.classList.toggle('active-menu-item');
+//     });
+
+// export default menuHandlers;
 
 
 /*

@@ -2,13 +2,14 @@
  * project match-match.
  */
 export const HeadMenu = document.getElementById('head-menu');
+export const Body = document.querySelector('body');
 export const MainContainer = document.getElementById('main-container');
 export const RegForm = document.getElementById('reg-form-container');
 export const Invite = document.getElementById('invitation');
 export const EmailInput = document.getElementById('reg-form-email');
 export const FirstNameInput = document.getElementById('first-name');
 export const LastNameInput = document.getElementById('last-name');
-export const Timer = document.getElementById('timer');
+export const TimerNode = document.getElementById('timer');
 export const NewPlayer = document.getElementById('new-player');
 export const NewGame = document.getElementById('new-game');
 export const MenuSkirts = document.getElementById('menu-skirts');
@@ -18,7 +19,7 @@ export const ButtonLevel = document.getElementById('button-level');
 export const GameDesk = document.getElementById('game-desk');
 export const GameSection = document.getElementById('game-section');
 
-export const EventNodes = {
+const EventNodes = {
     HeadMenu,
     MainContainer,
     RegForm,
@@ -26,7 +27,7 @@ export const EventNodes = {
     EmailInput,
     FirstNameInput,
     LastNameInput,
-    Timer,
+    TimerNode,
     NewPlayer,
     NewGame,
     MenuSkirts,
@@ -35,5 +36,7 @@ export const EventNodes = {
     ButtonLevel,
     GameDesk,
     GameSection,
+    Body,
 };
-// export const regFormSubmit = document.getElementById('regFormSubmit');
+export default EventNodes;
+//  regFormSubmit = document.getElementById('regFormSubmit');

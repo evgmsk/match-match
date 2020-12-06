@@ -60,16 +60,16 @@
       font: 1.8rem/2.4 Georgia, 'serif';
       color: $menu-item-color;
       line-height: 0;
-      &:hover {
-        // @extend  %drop-item;
-      }
-      &:focus {
-        // @extend  %drop-item;
-      }
-      &.active-menu-item {
-        height: 8rem;
-        color: $menu-item-focus;
-      }
+      // &:hover {
+      //   // @extend  %drop-item;
+      // }
+      // &:focus {
+      //   // @extend  %drop-item;
+      // }
+      // &.active-menu-item {
+      //   height: 8rem;
+      //   color: $menu-item-focus;
+      // }
     }
     @media (min-width: 900px) {
       width: 13rem;
