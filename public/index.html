@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=2.0, user-scalable=yes">
+    <meta name="description" content="Match-Match Game">
+    <title>Match-match-game</title>
+</head>
+<body>
+    <header class="header">
+        <div id="head-menu" class="head-menu">
+            <div class="menu-list player-menu">
+                <div class="menu-item">
+                    <a href="" id="new-player" class="head-item" ><h2>New Player</h2></a>
+                </div>
+                <div class="menu-item skirt-menu">
+                    <a id="button-skirt" href="#"><h2>Skirt cards</h2></a>
+                    <div id="menu-skirts" class="drop-menu-list">
+                        <button class="drop-item skirt-item" name="NutsKnacker">
+                        </button>
+                        <button class="drop-item skirt-item" name="LebKuchen">
+                        </button>
+                        <button class="drop-item skirt-item" name="SnowFlake">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-list timer-menu">
+                <div class="menu-item">
+                    <a href="" id="timer">
+                        <h2>
+                        Timer: <span>00:00</span>
+                        </h2>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="" id="best-time">
+                        <h2>Best time:</h2>
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+            <div class="menu-list">
+                <div class="menu-item">
+                    <a href="" id="new-game" class="head-item" ><h2>New Game</h2></a>
+                </div>
+                <div class="menu-item">
+                    <a id="button-level" href="#"><h2>Game level</h2></a>
+                    <div id="menu-level" class="drop-menu-list">
+                        <button class="drop-item" value="3">
+                            Low
+                        </button>
+                        <button class="drop-item" value="6">
+                            Medium
+                        </button>
+                        <button class="drop-item" value="12">
+                            High
+                        </button>
+                        <button class="drop-item" value="18">
+                            Ultimate
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="desk-background">
+            <div id="main-container" class="main-container">
+                <section id="game-section" class="game-section">
+                    <div id="game-desk" class="game-desk">
+
+                    </div>
+                </section>
+                <section id="invitation" class="invitation">
+                    <article class="invitation-body">
+                        <h1>Welcome to the Match-match Game!</h1>
+                        <div class="game-description">
+                            <p>
+                                The goal of the game is remove all cards from the desk as fast as possible.
+                            </p>
+                            <p>
+                                It sounds easy, but to do this you need to find all pairs
+                                (same cards) on the desk and open them successively.
+                                If the second opened card is not the same as the first one,
+                                cards remain on the table and turn face down again. You can try to
+                                discover pairs of cards randomly in hope on random matching,
+                                but it may take a long time. More wisely trying to remember positions
+                                of cards, which has been discovered earlier
+                                and then open pairs of same cards consequentially.
+                                You can choose difficulty level and card's skirt for your pleasure.
+                            </p>
+                            <p>
+                                Train your memory and catch luck!
+                            </p>
+                            <button id="invitation-continue" class="invitation-continue">Press to continue</button>
+                        </div>
+                    </article>
+                </section>
+                <section id="reg-form-container" class="reg-form-container">
+                    <h2>Please fill registration form</h2>
+                    <form id="reg-form" action="" name="reservationForm" class="reg-form" method="post" novalidate>
+                        <div class="form-fieldset">
+                            <label for="first-name">First Name</label>
+                            <input type="text" name="firstName" id="first-name" placeholder="your First Name *" >
+                        </div>
+                        <div class="form-fieldset">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" name="lastName" id="last-name" placeholder="your Last Name *" >
+                        </div>
+                        <div class="form-fieldset">
+                            <label for="reg-form-email">Email</label>
+                            <input type="email" name="email" id="reg-form-email" placeholder="your Email *" >
+                            <p class="email-validation">Please enter valid email</p>
+                        </div>
+                        <div class="form-fieldset">
+                            <input id="reg-form-submit" type="submit" value="Submit" >
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="foot-menu">
+
+        </div>
+    </footer>
+</body>
+</html>

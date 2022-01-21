@@ -1,0 +1,139 @@
+@import "../common/_variables", "../mixin/_mixins", "../mixin/_placeholders";
+
+.head-menu {
+  @include flex();
+  width: 85%;
+  visibility: hidden;
+}
+
+.menu-list {
+  position: relative;
+  @include flex(center, center);
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+}
+.menu-item {
+  position: relative;
+  text-align: center;
+  height: 4rem;
+  width: 12rem;
+  background: $border-main;
+  @extend %inset-shadow;
+  border: none;
+  border-radius: .5rem;
+  @media (min-width: 900px) {
+    width: 13rem;
+  }
+  @media (min-width: 1200px) {
+    width: 15rem;
+  }
+  h2 {
+    font: 2rem/2 Helvetica, 'sans-serif';
+    color: $menu-item-color;
+  }
+  &.skirt-menu {
+    .drop-menu-list{
+      @include flex(space-around, center, column);
+    }
+  }
+  .drop-menu-list{
+    @include flex(center, center, column);
+    position: absolute;
+    top: 4rem;
+    background: lighten($border-main, 5%);
+    z-index: 2;
+    width: 12rem;
+    height: 0;
+    transition: height .5s;
+    @extend %inset-shadow;
+    border-radius: .4rem;
+    .drop-item {
+      position: relative;
+      @include flex();
+      height: 0;
+      opacity: 0;
+      transition: height .4s, opacity .4s;
+      border: none;
+      border-radius: 5px;
+      background: transparent;
+      font: 1.8rem/2.4 Georgia, 'serif';
+      color: $menu-item-color;
+      line-height: 0;
+      // &:hover {
+      //   // @extend  %drop-item;
+      // }
+      // &:focus {
+      //   // @extend  %drop-item;
+      // }
+      // &.active-menu-item {
+      //   height: 8rem;
+      //   color: $menu-item-focus;
+      // }
+    }
+    @media (min-width: 900px) {
+      width: 13rem;
+    }
+    @media (min-width: 1200px) {
+      width: 15rem;
+    }
+  }
+  &:hover {
+    @extend %drop-menu-list;
+  }
+  &.dropped {
+    @extend %drop-menu-list;
+  }
+  & a:focus {
+    @extend %drop-menu-list;
+  }
+}
+
+.drop-item.skirt-item:first-of-type {
+  background: url('#{$imgPath}/skirts/x-mas-nussknacker.png') no-repeat center/100%;
+  width: 6rem;
+}
+.drop-item.skirt-item:nth-of-type(2) {
+  background: url('#{$imgPath}/skirts/x-mas-lebkuchen.png') no-repeat center/100%;
+  width: 6rem;
+}
+.drop-item.skirt-item:last-of-type {
+  background: url('#{$imgPath}/skirts/x-mas-snowflake.png') no-repeat center/100%;
+  width: 6rem;
+}
+.drop-item.skirt-item.active-menu-item {
+  @extend %skirt-item;
+}
+.drop-item.skirt-item:hover {
+  @extend %skirt-item;
+}
+.drop-item.skirt-item:focus {
+  @extend %skirt-item;
+}
+/*
+
+  min-width: 35rem;
+  width: 100%;
+  display: grid;
+  max-width: 140rem;
+  .nine-to-four {
+    @include grid(9,4)
+  }
+  .eight-to-three {
+    @include grid(8,3)
+  }
+  .four-to-three {
+    @include grid(4,3)
+  }
+  .three-to-two {
+    @include grid(3,2)
+  }
+  @media (max-width: 790px) {
+    //grid-template-columns: repeat(6, 1fr);
+    //grid-template-rows: repeat(6, 1fr);
+  }
+  @media (max-width: 590px) {
+    //grid-template-columns: repeat(9, 1fr);
+   // grid-template-rows: repeat(4, 1fr);
+  }
+*/

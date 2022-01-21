@@ -1,0 +1,21 @@
+@import "../common/variables";
+
+@mixin flex($justify: space-between, $align: center, $row: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $row;
+}
+
+@mixin grid($col: 4, $align: center, $justify: center) {
+  display: grid;
+  grid-template-columns: repeat($col, 1fr);
+  grid-auto-rows: 1fr;
+  align-content: space-around;
+  justify-items:  center;
+}
+
+@mixin reconfigureGrid($col: $gridCol, $row: $gridRow) {
+  grid-template-columns: repeat($col, 1fr);
+  grid-auto-rows: 1fr;
+}

@@ -1,0 +1,380 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, main {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: ''; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none; }
+
+a:focus {
+  outline: none; }
+
+.main, .desk-background .main-container, .top-menu-list .top-menu-item, .top-menu-item .drop-menu-list {
+  box-shadow: inset 0 0 1.5rem rgba(10, 10, 10, 0.7); }
+
+.form-fieldset input {
+  font: 2rem/2 Georgia, 'serif';
+  color: #212121; }
+
+.top-menu-item:hover .drop-menu-list, .top-menu-item.dropped .drop-menu-list {
+  height: 24rem;
+  transition: height .6s; }
+  .top-menu-item:hover .drop-menu-list .drop-item, .top-menu-item.dropped .drop-menu-list .drop-item {
+    height: 4rem;
+    opacity: 1;
+    transition: height .6s, opacity .6s; }
+  .top-menu-item:hover .drop-menu-list .skirt-img, .top-menu-item.dropped .drop-menu-list .skirt-img {
+    height: 5rem;
+    background: #ffffff;
+    transition: height .6s; }
+
+.top-menu-item .drop-menu-list .drop-item:hover, .top-menu-item .drop-menu-list .drop-item:focus {
+  color: #FFFF00;
+  cursor: pointer; }
+  .top-menu-item .drop-menu-list .drop-item:hover .skirt-img, .top-menu-item .drop-menu-list .drop-item:focus .skirt-img {
+    border: solid 2px #FFFF00; }
+
+html {
+  font-size: 10px; }
+  @media (max-width: 1600px) {
+    html {
+      font-size: 9px;
+      line-height: 2; } }
+  @media (max-width: 1200px) {
+    html {
+      font-size: 8px;
+      line-height: 2; } }
+
+body {
+  background: radial-gradient(#80DEEA, #d8f5f8); }
+
+.main {
+  position: relative;
+  background: radial-gradient(ellipse farthest-side, #ffffff, #904706);
+  width: 90%;
+  min-width: 45rem;
+  margin: 0 auto;
+  min-height: calc(100vh - 20rem);
+  box-sizing: border-box;
+  border-radius: 3rem;
+  padding: 2rem; }
+
+.desk-background {
+  border-radius: 2rem;
+  background: radial-gradient(farthest-side, #428927, #397521);
+  min-height: calc(100vh - 24rem); }
+  .desk-background .main-container {
+    min-height: calc(100vh - 24rem);
+    background: url("../img/publicdomainq-panda.svg") no-repeat;
+    background-size: 20%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    padding: 2rem 0; }
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 10rem; }
+
+.footer {
+  min-height: 10rem; }
+
+.main, .desk-background .main-container, .top-menu-list .top-menu-item, .top-menu-item .drop-menu-list {
+  box-shadow: inset 0 0 1.5rem rgba(10, 10, 10, 0.7); }
+
+.form-fieldset input {
+  font: 2rem/2 Georgia, 'serif';
+  color: #212121; }
+
+.top-menu-item:hover .drop-menu-list, .top-menu-item.dropped .drop-menu-list {
+  height: 24rem;
+  transition: height .6s; }
+  .top-menu-item:hover .drop-menu-list .drop-item, .top-menu-item.dropped .drop-menu-list .drop-item {
+    height: 4rem;
+    opacity: 1;
+    transition: height .6s, opacity .6s; }
+  .top-menu-item:hover .drop-menu-list .skirt-img, .top-menu-item.dropped .drop-menu-list .skirt-img {
+    height: 5rem;
+    background: #ffffff;
+    transition: height .6s; }
+
+.top-menu-item .drop-menu-list .drop-item:hover, .top-menu-item .drop-menu-list .drop-item:focus {
+  color: #FFFF00;
+  cursor: pointer; }
+  .top-menu-item .drop-menu-list .drop-item:hover .skirt-img, .top-menu-item .drop-menu-list .drop-item:focus .skirt-img {
+    border: solid 2px #FFFF00; }
+
+.head-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 85%; }
+
+.top-menu-list {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; }
+  @media (max-width: 900px) {
+    .top-menu-list {
+      flex-direction: column; } }
+  .top-menu-list .top-menu-item {
+    position: relative;
+    text-align: center;
+    height: 4rem;
+    width: 12rem;
+    background: #904706;
+    border: none;
+    border-radius: .5rem; }
+    @media (min-width: 900px) {
+      .top-menu-list .top-menu-item {
+        width: 13rem; } }
+    @media (min-width: 1200px) {
+      .top-menu-list .top-menu-item {
+        width: 15rem; } }
+    .top-menu-list .top-menu-item h2 {
+      font: 2rem/2 Helvetica, 'sans-serif';
+      color: #ffffff; }
+
+.top-menu-item .drop-menu-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 4rem;
+  background: #a95307;
+  z-index: 2;
+  width: 12rem;
+  height: 0;
+  transition: height .5s;
+  border-radius: .4rem; }
+  .top-menu-item .drop-menu-list .skirt-img {
+    height: 0;
+    width: 4rem;
+    background: #fefefe;
+    transition: height .4s; }
+  .top-menu-item .drop-menu-list .drop-item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    height: 0;
+    opacity: 0;
+    transition: height .4s, opacity .4s;
+    border: none;
+    background: transparent;
+    font: 1.8rem/2.4 Georgia, 'serif';
+    color: #ffffff;
+    line-height: 0; }
+  @media (min-width: 900px) {
+    .top-menu-item .drop-menu-list {
+      width: 13rem; } }
+  @media (min-width: 1200px) {
+    .top-menu-item .drop-menu-list {
+      width: 15rem; } }
+
+.invitation {
+  position: relative;
+  background: #397521;
+  width: 80%;
+  height: 80%;
+  padding: 1.5rem;
+  color: #fefefe;
+  text-align: center;
+  font: 2rem/1.5 Georgia, "sans-serif";
+  border: solid 0.1rem #783b05;
+  border-radius: 3rem; }
+  @media (min-width: 768px) {
+    .invitation {
+      max-width: 75%;
+      padding: 3rem; } }
+  @media (min-width: 900px) {
+    .invitation {
+      max-width: 70%;
+      padding: 4rem 8rem; } }
+  @media (min-width: 1200px) {
+    .invitation {
+      max-width: 80rem;
+      padding: 5rem 10rem; } }
+  .invitation h1 {
+    font: 3.5rem/1 Helvetica, 'sans-serif';
+    color: #fefefe;
+    margin-bottom: 3rem; }
+  .invitation button {
+    height: 7rem;
+    width: 25rem;
+    background-color: #388E3C;
+    border: solid 1px #904706;
+    border-radius: 1rem;
+    font-size: 2rem;
+    color: #fefefe;
+    font-weight: 700;
+    margin: 2rem auto 0;
+    transition: color .5s; }
+    .invitation button:hover {
+      background-color: #fefefe;
+      color: #359039;
+      cursor: pointer;
+      transition: color .5s; }
+  .invitation p {
+    margin: 1rem auto; }
+  .invitation .game-description {
+    width: 100%;
+    margin: 0 auto; }
+  .invitation.hide-invitation {
+    display: none; }
+
+.main, .desk-background .main-container, .top-menu-list .top-menu-item, .top-menu-item .drop-menu-list {
+  box-shadow: inset 0 0 1.5rem rgba(10, 10, 10, 0.7); }
+
+.form-fieldset input {
+  font: 2rem/2 Georgia, 'serif';
+  color: #212121; }
+
+.top-menu-item:hover .drop-menu-list, .top-menu-item.dropped .drop-menu-list {
+  height: 24rem;
+  transition: height .6s; }
+  .top-menu-item:hover .drop-menu-list .drop-item, .top-menu-item.dropped .drop-menu-list .drop-item {
+    height: 4rem;
+    opacity: 1;
+    transition: height .6s, opacity .6s; }
+  .top-menu-item:hover .drop-menu-list .skirt-img, .top-menu-item.dropped .drop-menu-list .skirt-img {
+    height: 5rem;
+    background: #ffffff;
+    transition: height .6s; }
+
+.top-menu-item .drop-menu-list .drop-item:hover, .top-menu-item .drop-menu-list .drop-item:focus {
+  color: #FFFF00;
+  cursor: pointer; }
+  .top-menu-item .drop-menu-list .drop-item:hover .skirt-img, .top-menu-item .drop-menu-list .drop-item:focus .skirt-img {
+    border: solid 2px #FFFF00; }
+
+.reg-form-container {
+  position: relative;
+  background: radial-gradient(ellipse, #397521, rgba(0, 0, 0, 0)), url(/../../img/publicdomainq-panda.svg);
+  color: #fefefe;
+  font: 2rem/1.5 Georgia, "sans-serif";
+  opacity: 0;
+  width: 60%;
+  display: none; }
+  .reg-form-container h2 {
+    margin: 0 auto;
+    font-size: 3rem;
+    line-height: 6rem;
+    text-align: center; }
+    @media (min-width: 768px) {
+      .reg-form-container h2 {
+        font-size: 3.5rem;
+        line-height: 7rem; } }
+  .reg-form-container .reg-form {
+    width: 70%;
+    margin: 4rem auto; }
+  .reg-form-container.show-form {
+    opacity: 1;
+    transition: opacity 1.2s; }
+
+.form-fieldset {
+  position: relative;
+  width: 70%;
+  margin: 5rem auto 0;
+  display: flex;
+  justify-content: space-around;
+  align-content: stretch; }
+  .form-fieldset label {
+    display: block;
+    width: 30%;
+    min-width: 15rem; }
+  .form-fieldset input {
+    background: #fefefe;
+    padding: 0 1rem;
+    width: 60%;
+    min-width: 18rem;
+    outline: none;
+    border: none;
+    border-radius: .5rem; }
+    .form-fieldset input.invalid-input {
+      border: solid 2px #DD2C00; }
+  .form-fieldset [type='submit'] {
+    margin: 2rem auto;
+    height: 5rem;
+    border-radius: 1rem;
+    color: #205823; }
+    .form-fieldset [type='submit']:hover {
+      color: #fefefe;
+      cursor: pointer;
+      background-color: #205823; }
+  .form-fieldset .email-validation {
+    position: absolute;
+    top: 5rem;
+    visibility: hidden;
+    color: #DD2C00;
+    font-size: 2rem; }
+
+.game-desk {
+  display: none;
+  height: 400px;
+  width: 100%; }
+  .game-desk div {
+    height: 100%;
+    width: 100%; }
+
+/*
+@keyframes opac {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+*/
+
+/*# sourceMappingURL=style.css.map */

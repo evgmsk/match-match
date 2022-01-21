@@ -1,0 +1,103 @@
+@import "../common/variables", "../mixin/mixins", "../mixin/placeholders", "card";
+
+.game-section {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.game-desk {
+  min-width: 35rem;
+  width: 100%;
+  max-width: 140rem;
+  &.nine-to-four {
+    @include grid(4);
+    & .card-container {
+      @extend %card-container;
+    }
+    @media (min-width: 500px) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+    @media (min-width: 760px) {
+      @include grid();
+      grid-template-columns: repeat(9, 1fr);
+    }
+    @media screen and (orientation: portrait) {
+      grid-template-columns: repeat(6, 1fr);
+      @media (min-width: 800px) {
+        .card-container {
+          width: 14rem;
+          height: calc(14rem * 1.47);
+        }
+      }
+    }
+  }
+  &.eight-to-three {
+    @include grid(4, 3);
+    & .card-container{
+      @extend %card-container;
+    }
+    @media (min-width: 760px) {
+      grid-template-columns: repeat(6, 1fr);
+      .card-container {
+        width: 10rem;
+        height: calc(10rem * 1.47);
+      }
+    }
+    @media (min-width: 1200px) {
+      @include grid();
+      grid-template-columns: repeat(8, 1fr);
+      .card-container {
+        width: 12rem;
+        height: calc(12rem * 1.47);
+      }
+    }
+  }
+  &.four-to-three {
+    @include grid(3);
+    & .card-container{
+      @extend %card-container;
+      width: 13rem;
+      height: calc(13rem * 1.47);
+    }
+    @media (min-width: 500px) {
+      grid-template-columns: repeat(4, 1fr);
+      .card-container {
+        width: 13rem;
+        height: calc(13rem * 1.47);
+      }
+    }
+    @media (min-width: 1200px) {
+      .card-container {
+        width: 13rem;
+        height: calc(13rem * 1.47);
+      }
+    }
+  }
+  &.three-to-two {
+    @include grid(2);
+    & .card-container{
+      @extend %card-container;
+      width: 16rem;
+      height: calc(16rem * 1.47);
+    }
+    @media (min-width: 500px) {
+      grid-template-columns: repeat(3, 1fr);
+      .card-container {
+        width: 18rem;
+        height: calc(18rem * 1.47);
+      }
+    }
+    @media screen and (orientation: portrait) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 1200px) {
+      .card-container {
+        width: 20rem;
+        height: calc(20rem * 1.47);
+      }
+    }
+
+  }
+}
